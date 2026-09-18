@@ -88,6 +88,14 @@ justify-content: center;
 font-size: 62px;
 }
 
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
 h1 {
 font-family: 'Dancing Script', cursive;
 font-size: 30px;
@@ -317,7 +325,9 @@ audio { display: none; }
 <div class="corner-bow bottom-left">🎀</div>
 <div class="corner-bow bottom-right">🎀</div>
 
-<div class="photo">🎂</div>
+<div class="photo">
+    <img src="images/somie.jpg" alt="Ánh Dương">
+</div>
 
 <h1>You're Invited!</h1>
 <p class="subtitle">Thiệp mời sinh nhật</p>
@@ -332,7 +342,7 @@ audio { display: none; }
 </div>
 <div class="info-item">
 <span>🕔</span>
-<div><strong>Giờ:</strong> 15:30</div>
+<div><strong>Giờ:</strong> 16:00</div>
 </div>
 <div class="info-item">
 <span>📍</span>
@@ -413,7 +423,7 @@ function confirmJoin() {
       localStorage.setItem("birthday_rsvp_" + selectedGuest, confirmedAt);
 
       popupText.innerHTML = `Cảm ơn <strong>${selectedGuest}</strong> đã xác nhận tham dự! 💖<br><br>
-        Hẹn gặp bạn lúc <strong>15:30, ngày 04 tháng 10</strong> tại <strong>Kope Chicken</strong>! 🎂✨`;
+        Hẹn gặp bạn lúc <strong>16:00, ngày 04 tháng 10</strong> tại <strong>Kope Chicken</strong>! 🎂✨`;
 
       popup.classList.add("show");
     }
@@ -422,20 +432,7 @@ function closePopup() {
 popup.classList.remove('show');
 }
 
-// Nhạc
-const musicBtn = document.getElementById('musicBtn');
-function toggleMusic() {
-if (isPlaying) {
-music.pause();
-musicBtn.innerHTML = '🎵 Bật nhạc';
-} else {
-music.play().catch(() => {
-alert('Trình duyệt chặn tự phát nhạc. Hãy nhấn lại nút nha!');
-});
-musicBtn.innerHTML = '🔇 Tắt nhạc';
-}
-isPlaying = !isPlaying;
-}
+
 </script>
 </body>
 </html>
